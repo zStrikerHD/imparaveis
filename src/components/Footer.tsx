@@ -28,7 +28,6 @@ const TICKER_ITEMS = [
 
 export function Footer({ geoResult }: FooterProps) {
   const waUrl = buildWhatsAppUrl(geoResult.unit);
-  const tickerContent = [...TICKER_ITEMS, ...TICKER_ITEMS].join(' · ');
 
   return (
     <footer id="footer" className="relative overflow-hidden">

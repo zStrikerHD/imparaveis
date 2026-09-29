@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Check, Zap } from 'lucide-react';
 import type { GeoResult } from '../types';
-import { buildWhatsAppUrl } from '../data';
 
 interface PricingPlan {
   id: string;

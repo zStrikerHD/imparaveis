@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import { MapPin, Loader2, ChevronDown } from 'lucide-react';
 import type { GeoResult } from '../types';
 import type { GeoStatus } from '../hooks/useGeolocation';
@@ -18,7 +19,9 @@ interface HeroProps {
   geoStatus: GeoStatus;
 }
 
-const heroVariants = {
+const customEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+const heroVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -26,22 +29,22 @@ const heroVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.7, ease: customEase },
   },
 };
 
-const titleVariants = {
+const titleVariants: Variants = {
   hidden: { opacity: 0, y: 60, skewY: 3 },
   visible: {
     opacity: 1,
     y: 0,
     skewY: 0,
-    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.9, ease: customEase },
   },
 };
 
