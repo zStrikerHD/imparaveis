@@ -52,7 +52,7 @@ function ModalityCard({ modality, index }: ModalityCardProps) {
         perspective: 1000,
       }}
       className={`relative rounded-sm overflow-hidden cursor-pointer group ${
-        isHighlight ? 'row-span-2' : ''
+        isHighlight ? 'lg:row-span-2' : ''
       }`}
     >
       {/* Spotlight effect */}
@@ -220,14 +220,10 @@ export function Modalities({ modalities }: ModalitiesProps) {
           </h2>
         </motion.div>
 
-        {/* True Bento Grid — 3 cols, highlight cards span 1 row each */}
+        {/* True Bento Grid — responsive: 1 col mobile, 2 col tablet, 3 col desktop */}
         <div
-          className="grid gap-3"
-          style={{
-            perspective: '1000px',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gridTemplateRows: 'auto',
-          }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"
+          style={{ perspective: '1000px' }}
         >
           {modalities.map((mod, i) => (
             <ModalityCard key={mod.id} modality={mod} index={i} />
